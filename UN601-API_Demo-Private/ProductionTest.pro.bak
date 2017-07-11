@@ -1,0 +1,42 @@
+#-------------------------------------------------
+#
+# Project created by QtCreator 2017-04-25T09:13:57
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = ProductionTest
+TEMPLATE = app
+
+LIBS += -L$$PWD/
+LIBS += -l$$PWD/include/libapi.so 
+
+SOURCES += main.cpp\
+    dialog.cpp
+
+HEADERS  += \
+    dialog.h \
+    dll_api.h
+
+FORMS    += \
+    dialog.ui
+
+RESOURCES += \
+    ProductionTest.qrc
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/release/ -lapi
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/debug/ -lapi
+else:unix: LIBS += -L$$PWD/ -lapi
+
+INCLUDEPATH += $$PWD/
+DEPENDPATH += $$PWD/
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/lib/release/ -lapi
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/lib/debug/ -lapi
+else:unix: LIBS += -L$$PWD/lib/ -lapi
+
+INCLUDEPATH += $$PWD/
+DEPENDPATH += $$PWD/

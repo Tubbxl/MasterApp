@@ -1,0 +1,4 @@
+---- DLL_ScanModeSet Æ¥Åä (3 in 3 ÎÄ¼þ) ----
+Dll_api.h (e:\share\api_0502\un601-apiserver-private\include):int DLL_ScanModeSet(BYTE mode);
+Main.c (e:\share\api_0502\un601-apiserver-private):			iRet = DLL_ScanModeSet(recvbuf[4]);
+Scan.c (e:\share\api_0502\un601-apiserver-private\scan):int DLL_ScanModeSet(BYTE mode,BYTE *prefix, BYTE *suffix)
